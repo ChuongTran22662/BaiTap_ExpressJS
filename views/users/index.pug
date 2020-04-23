@@ -1,0 +1,13 @@
+extends ../layouts/common
+block content
+    h1 Danh Sách Người Dùng
+    a(href="/users/create") Thêm người dùng
+
+    form(action="/users/search", method="GET")
+        input(type='text',name="q")
+        button.btn.btn-primary(type='submit') Tìm Kiếm
+
+    ul
+        each user in users
+            li=user.name 
+            a(href="/users/" + user.id + "/delete") xóa người đọc

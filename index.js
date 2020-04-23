@@ -5,10 +5,6 @@ var cookieParser = require('cookie-parser')
 
 app.use(cookieParser())
 
-const shortid = require("shortid");
-
-var db = require("./db");
-
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +16,9 @@ app.set("views", "./views");
 app.get("/", (req, res) => {
     res.render("home/index")
 });
+
+const userRoute = require('./routes/user.route.js');
+app.use('/users', userRoute);
 
 // listen for requests :)
 app.listen(3000, () => {

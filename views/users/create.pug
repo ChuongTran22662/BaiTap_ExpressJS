@@ -1,0 +1,10 @@
+extends ../layouts/common
+
+block content
+  h1 Thêm người dùng
+
+    form(action="/users/create", method="POST")
+        label(for="name") Name
+        input(name="name", type="text", value=values ? values.name : "")
+
+        button.btn.btn-primary Create
