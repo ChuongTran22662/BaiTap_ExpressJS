@@ -3,6 +3,10 @@ extends ../layouts/common
 block content
   h3 Thêm người dùng
 
+  if errors
+    each error in errors
+      .alert.alert-danger= error
+
   form(action="/users/create", method="POST")
       label(for="name") Name
       input(name="name", type="text", value=values ? values.name : "")

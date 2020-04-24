@@ -31,6 +31,9 @@ app.use('/books',authMiddleware.requireAuth, bookRoute);
 const transactionRoute = require('./routes/transaction.route');
 app.use('/transactions',authMiddleware.requireAuth, transactionRoute);
 
+var productRoute = require('./routes/product.route');
+app.use('/products', productRoute);
+
 // listen for requests :)
 app.listen(3000, () => {
     console.log("Server listening on port " + 3000);
