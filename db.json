@@ -3,7 +3,9 @@
     {
       "name": "Tran Chuong",
       "phone": "123456",
-      "id": "Nsvxb4BPY"
+      "id": "Nsvxb4BPY",
+      "email": "chuongcongtu9x@gmail.com",
+      "password": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
       "name": "Giang Anh",
@@ -28,7 +30,7 @@
       "id": "S1F5wAxuo",
       "userId": "gKpPP7qi_",
       "bookId": "ub3NLG5yN",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": "ZH5IRutbG",

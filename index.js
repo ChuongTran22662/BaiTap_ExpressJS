@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+var authMiddleware = require('./middlewares/auth.middleware');
+
 
 app.set("view engine", "pug");
 app.set("views", "./views");
@@ -17,14 +19,17 @@ app.get("/", (req, res) => {
     res.render("home/index")
 });
 
+const authRoute = require('./routes/auth.route');
+app.use('/auth', authRoute);
+
 const userRoute = require('./routes/user.route');
-app.use('/users', userRoute);
+app.use('/users',authMiddleware.requireAuth, userRoute);
 
 const bookRoute = require('./routes/book.route');
-app.use('/books', bookRoute);
+app.use('/books',authMiddleware.requireAuth, bookRoute);
 
 const transactionRoute = require('./routes/transaction.route');
-app.use('/transactions', transactionRoute);
+app.use('/transactions',authMiddleware.requireAuth, transactionRoute);
 
 // listen for requests :)
 app.listen(3000, () => {

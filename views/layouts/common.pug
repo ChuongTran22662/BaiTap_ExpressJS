@@ -3,4 +3,14 @@ html
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
     link(rel="stylesheet" , href="/styles/custom.css")
   body
+    nav.navbar.navbar-dark.bg-primary
+        ul.navbar-nav.d-flex.p-2
+            li.nav-item
+                a.nav-link(href='/users') Trang Chủ 
+            li.nav-item
+                a.nav-link(href='/users') Người dùng 
+            li.nav-item
+                a.nav-link(href='/books') Sách
+            li.nav-item
+                a.nav-link(href='transactions') Người mượn
     block content
