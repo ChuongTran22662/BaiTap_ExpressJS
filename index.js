@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var authMiddleware = require('./middlewares/auth.middleware');
-
+var port = process.env.PORT || 3000
 
 app.set("view engine", "pug");
 app.set("views", "./views");
@@ -35,6 +35,6 @@ var productRoute = require('./routes/product.route');
 app.use('/products', productRoute);
 
 // listen for requests :)
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server listening on port " + 3000);
 });
