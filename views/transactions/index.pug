@@ -1,0 +1,15 @@
+extends ../layouts/common
+block content
+    h1 Danh sách mượn sách
+    a(href="/transactions/create") Mượn sách
+
+    ul
+        each transaction in transactions
+            li=transaction.userId + "<===>" + transaction.bookId 
+            if(transaction.isComplete ===true)
+                li= "hoàn thành"
+            else
+                li= "Chưa hoàn thành"
+            a(href="/transactions/"+ transaction.id +"/complete" ) Hoàn thành
+            hr
+            hr

@@ -27,7 +27,6 @@ module.exports.search = (req, res) => {
 
 module.exports.delete = (req, res) => {
     const id = req.params.id;
-    console.log(id)
 
     db.get("users").remove({ id: id }).write();
 

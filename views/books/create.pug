@@ -1,13 +1,13 @@
 extends ../layouts/common
 
 block content
-  h3 Thêm người dùng
+  h3 Thêm Sách
 
-  form(action="/users/create", method="POST")
+  form(action="/books/create", method="POST")
       label(for="name") Name
       input(name="name", type="text", value=values ? values.name : "")
 
-      label(for="phone") Title
-      input(name="phone", type="text", value=values ? values.phone : "")
+      label(for="title") Phone
+      input(name="title", type="text", value=values ? values.title : "")
 
       button.btn.btn-primary Create

@@ -17,8 +17,14 @@ app.get("/", (req, res) => {
     res.render("home/index")
 });
 
-const userRoute = require('./routes/user.route.js');
+const userRoute = require('./routes/user.route');
 app.use('/users', userRoute);
+
+const bookRoute = require('./routes/book.route');
+app.use('/books', bookRoute);
+
+const transactionRoute = require('./routes/transaction.route');
+app.use('/transactions', transactionRoute);
 
 // listen for requests :)
 app.listen(3000, () => {
