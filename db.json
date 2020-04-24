@@ -11,33 +11,18 @@
       "name": "Giang Anh",
       "phone": "1231231",
       "id": "gKpPP7qi_"
-    },
-    {
-      "name": "xxx",
-      "phone": "111",
-      "id": "3EJ011One"
-    },
-    {
-      "name": "zzzz",
-      "phone": "11111",
-      "id": "TxZekqTm3"
-    },
-    {
-      "name": "1111111111111111",
-      "phone": "11111",
-      "id": "xr42-uVeH"
     }
   ],
   "books": [
     {
-      "name": "1",
-      "title": "w",
-      "id": "ub3NLG5yN"
+      "name": "Conan",
+      "title": "121212",
+      "id": "lo6hDN1JC"
     },
     {
-      "name": "2",
-      "title": "w",
-      "id": "ZXbom-kO2"
+      "name": "Doraemon",
+      "title": "12131231",
+      "id": "ErId1zni9"
     }
   ],
   "transactions": [

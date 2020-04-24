@@ -2,15 +2,15 @@ extends ../layouts/common
 block content
     h2 LIST BOOK
     a(href="/books/create") Thêm sách
-
+    hr
     form(action="/books/search" method="GET")
         input(type='text' name="q")
         button.btn.btn-primary(type='submit') Tìm Kiếm
 
     ul
         each book in books
-            li=book.name + "<===>" + book.title
+            li=book.name + "-------" + book.title
             a(href="/books/" + book.id + "/delete") xóa sách
             hr
-            hr
             a(href="/books/" + book.id + "/update") cập nhật tiêu đề 
+            hr

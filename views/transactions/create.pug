@@ -6,9 +6,9 @@ block content
       select(name="bookRecieve")
         each book in dataBook
          option(value=book.title)= book.title
-
+      hr
       select(name="userRecieve")
         each user in dataUser
          option(value=user.name)= user.name
-      div(class="mt-5")
-       button(class="btn btn-danger mt-5") Add
+      div(class="mt-1")
+       button(class="btn btn-warning mt-5") Add

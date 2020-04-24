@@ -1,7 +1,9 @@
-h2 Cập nhật tiêu đề sách
-form(action="/books/update", method="POST")
-  lable Tiêu đề mới :
-  hr
-  input(type="hidden", name="id", value=id)
-  input(type="text", name="title")
-  button Cập nhật
+extends ../layouts/common
+block content
+  h2 Cập nhật tiêu đề sách
+  form(action="/books/update", method="POST")
+    lable Tiêu đề mới :
+    hr
+    input(type="hidden", name="id", value=id)
+    input(type="text", name="title")
+    button Cập nhật

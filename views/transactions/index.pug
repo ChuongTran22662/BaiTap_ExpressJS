@@ -5,11 +5,10 @@ block content
 
     ul
         each transaction in transactions
-            li=transaction.userId + "<===>" + transaction.bookId 
+            li=transaction.userId + "--------" + transaction.bookId 
             if(transaction.isComplete ===true)
-                li= "hoàn thành"
+                li= "Đã trả"
             else
-                li= "Chưa hoàn thành"
-            a(href="/transactions/"+ transaction.id +"/complete" ) Hoàn thành
-            hr
+                li= "Chưa trả"
+            a(href="/transactions/"+ transaction.id +"/complete" ) Trả sách
             hr
