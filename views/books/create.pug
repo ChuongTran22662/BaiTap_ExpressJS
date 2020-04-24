@@ -1,13 +1,13 @@
 extends ../layouts/common
 
 block content
-  h3 Thêm Sách
+  div(class="mt-4 ml-4")
+    h3 Thêm Sách
 
-  form(action="/books/create", method="POST")
-      label(for="name") Name
-      input(name="name", type="text", value=values ? values.name : "")
-
-      label(for="title") Title
-      input(name="title", type="text", value=values ? values.title : "")
-
-      button.btn.btn-primary Create
+    form(action="/books/create", method="POST",class="mt-4")
+        label(for="name",class="mr-4") Name
+        input(name="name", type="text", value=values ? values.name : "",class="mr-4")
+        label(for="title",class="mr-4") Title
+        input(name="title", type="text", value=values ? values.title : "")
+        br
+        button.btn.btn-info.mt-4 Create

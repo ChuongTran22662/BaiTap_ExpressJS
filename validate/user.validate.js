@@ -1,9 +1,9 @@
 module.exports.postCreate = function (req, res, next) {
     var errors = [];
 
-    if (req.body.name.length < 10) {
-        errors.push("Name have to > 10 s");
-    }
+    // if (req.body.name.length < 10) {
+    //     errors.push("Name have to > 10 s");
+    // }
 
     if (!req.body.name) {
         errors.push('Name is required.');

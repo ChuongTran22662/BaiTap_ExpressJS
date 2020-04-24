@@ -5,6 +5,31 @@ const shortid = require('shortid');
 module.exports.index = (req, res) => {
     const transactions = db.get("transactions").value();
 
+    // var usersBorrow = [];
+    // var booksBorrow = [];
+    // var amountBook = [];
+    // var statusBook = [];
+
+    // dataTran.forEach(item => {
+    //     usersBorrow.push(db.get("users").find({
+    //         id: item.userId
+    //     }).value());
+    //     booksBorrow.push(db.get("books").find({
+    //         id: item.bookId
+    //     }).value());
+    //     amountBook.push(item.id);
+    //     statusBook.push(item.isComplete);
+    // });
+
+    // console.log(usersBorrow)
+
+    // res.render("transactions", {
+    //     usersBorrow: usersBorrow,
+    //     booksBorrow: booksBorrow,
+    //     amountBook: amountBook,
+    //     statusBook: statusBook
+    // });
+
     res.render('transactions/index', {
         transactions: transactions
     })

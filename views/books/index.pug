@@ -1,16 +1,23 @@
 extends ../layouts/common
 block content
-    h2 LIST BOOK
-    a(href="/books/create") Thêm sách
-    hr
-    form(action="/books/search" method="GET")
-        input(type='text' name="q")
-        button.btn.btn-primary(type='submit') Tìm Kiếm
+    div(class="ml-4")
+        h3.mt-4 LIST BOOK
+        a(href="/books/create") Thêm sách
 
-    ul
-        each book in books
-            li=book.name + "-------" + book.title
-            a(href="/books/" + book.id + "/delete") xóa sách
-            hr
-            a(href="/books/" + book.id + "/update") cập nhật tiêu đề 
-            hr
+        .d-flex.align-items-center
+        form.ml-auto(action="/books/search" method="GET" class="d-flex")
+            input(type="text" name="q" class="form-control")
+            button(class="btn btn-info ml-2") Tìm kiếm
+
+        table.table
+            tr
+                th Name
+                th Title
+            each book in books
+                tr
+                    td= book.name
+                    td= book.title
+                    td
+                        .btn.btn-light.mr-10
+                            a(href="/books/" + book.id + "/delete",class="mr-4") xóa sách
+                            a(href="/books/" + book.id + "/update") cập nhật tiêu đề 

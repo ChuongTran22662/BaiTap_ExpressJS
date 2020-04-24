@@ -3,12 +3,30 @@ block content
     h1 Danh sách mượn sách
     a(href="/transactions/create") Mượn sách
 
-    ul
-        each transaction in transactions
-            li=transaction.userId + "--------" + transaction.bookId 
-            if(transaction.isComplete ===true)
-                li= "Đã trả"
-            else
-                li= "Chưa trả"
-            a(href="/transactions/"+ transaction.id +"/complete" ) Trả sách
-            hr
+    table.table
+            tr
+                th Name
+                th Title
+            each transaction in transactions
+                tr
+                    td= transaction.userId
+                    td= transaction.bookId
+                    td
+                        if(transaction.isComplete ===true)
+                        .btn.btn-light.mr-10
+                            a(href="/transactions/"+ transaction.id +"/complete" ) Trả sách
+                    td
+                        if(transaction.isComplete===true)
+                            span= "Đã trả"
+                        else
+                            span= "Chưa trả"
+
+    //- ul
+    //-     each transaction in transactions
+    //-         li=transaction.userId + "--------" + transaction.bookId 
+    //-         if(transaction.isComplete ===true)
+    //-             li= "Đã trả"
+    //-         else
+    //-             li= "Chưa trả"
+    //-         a(href="/transactions/"+ transaction.id +"/complete" ) Trả sách
+    //-         hr

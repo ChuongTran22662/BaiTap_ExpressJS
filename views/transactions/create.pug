@@ -1,14 +1,13 @@
 extends ../layouts/common
 block content
-    h1 Mượn sách
+    h3.mt-4 Mượn sách
 
-    form(action="/transactions/create", method="POST")
-      select(name="bookRecieve")
+    form(action="/transactions/create", method="POST",class="mt-4")
+      select(name="bookRecieve",class="mr-4")
         each book in dataBook
          option(value=book.title)= book.title
-      hr
       select(name="userRecieve")
         each user in dataUser
          option(value=user.name)= user.name
-      div(class="mt-1")
-       button(class="btn btn-warning mt-5") Add
+      div(class="mt-4")
+       button(class="btn btn-info mt-5") Add
