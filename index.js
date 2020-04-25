@@ -23,13 +23,13 @@ const authRoute = require('./routes/auth.route');
 app.use('/auth', authRoute);
 
 const userRoute = require('./routes/user.route');
-app.use('/users',authMiddleware.requireAuth, userRoute);
+app.use('/users', userRoute);
 
 const bookRoute = require('./routes/book.route');
-app.use('/books',authMiddleware.requireAuth, bookRoute);
+app.use('/books', bookRoute);
 
 const transactionRoute = require('./routes/transaction.route');
-app.use('/transactions',authMiddleware.requireAuth, transactionRoute);
+app.use('/transactions', transactionRoute);
 
 var productRoute = require('./routes/product.route');
 app.use('/products', productRoute);
