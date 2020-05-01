@@ -5,33 +5,27 @@ const shortid = require('shortid');
 module.exports.index = (req, res) => {
     const transactions = db.get("transactions").value();
 
-    // var usersBorrow = [];
-    // var booksBorrow = [];
-    // var amountBook = [];
-    // var statusBook = [];
+    var collections = transactions.map((item, index) => {
+        let bookTransaction = db.get("books").value().find(itemBook => {
+            return itemBook.id === itemBook.id
+        })
 
-    // dataTran.forEach(item => {
-    //     usersBorrow.push(db.get("users").find({
-    //         id: item.userId
-    //     }).value());
-    //     booksBorrow.push(db.get("books").find({
-    //         id: item.bookId
-    //     }).value());
-    //     amountBook.push(item.id);
-    //     statusBook.push(item.isComplete);
-    // });
+        let userTransaction = db.get("users").value().find(itemUser => {
+            return itemUser.id === itemUser.id
+        })
 
-    // console.log(usersBorrow)
+        let x = {
+            id: item.id,
+            isComplete: item.isComplete,
+            title: [bookTransaction.title],
+            name: userTransaction.name
+        }
 
-    // res.render("transactions", {
-    //     usersBorrow: usersBorrow,
-    //     booksBorrow: booksBorrow,
-    //     amountBook: amountBook,
-    //     statusBook: statusBook
-    // });
+        return x;
+    })
 
     res.render('transactions/index', {
-        transactions: transactions
+        transactions: collections
     })
 }
 
@@ -66,7 +60,7 @@ module.exports.complete = (req, res) => {
 
     const id = req.params.id;
 
-    db.get("transactions").find({ id: id }).assign({isComplete : true}).write();
+    db.get("transactions").find({ id: id }).assign({ isComplete: true }).write();
 
     res.redirect('/transactions')
 }

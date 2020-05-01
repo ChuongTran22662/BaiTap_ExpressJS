@@ -9,8 +9,8 @@ block content
                 th Title
             each transaction in transactions
                 tr
-                    td= transaction.userId
-                    td= transaction.bookId
+                    td= transaction.name
+                    td= transaction.title
                     td
                         if(transaction.isComplete ===true)
                         .btn.btn-light.mr-10
@@ -20,13 +20,3 @@ block content
                             span= "Đã trả"
                         else
                             span= "Chưa trả"
-
-    //- ul
-    //-     each transaction in transactions
-    //-         li=transaction.userId + "--------" + transaction.bookId 
-    //-         if(transaction.isComplete ===true)
-    //-             li= "Đã trả"
-    //-         else
-    //-             li= "Chưa trả"
-    //-         a(href="/transactions/"+ transaction.id +"/complete" ) Trả sách
-    //-         hr
